@@ -1,30 +1,10 @@
 <template>
-    <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document</title>
-    </head>
-    <body>
      <div class="component">
       <h1>This is the Components page</h1>
+      <p>2 + 2</p>
      <Navbar/>
     </div>
-    <aside>
-      2 + 2
-    </aside>
-    <aside>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </aside>
-    <aside>
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-    </aside>
-    <footer>
-      <Footer/>
-    </footer>
-    </body>
-    </html>
+    <Footer></Footer>
 </template>
 
 <script>
@@ -36,6 +16,9 @@ export default {
   components: {
     Navbar,
     Footer,
+  },
+  mounted() {
+    console.log(this.$el.textContent); // I'm calculating elements inside the component.
   },
 };
 </script>
