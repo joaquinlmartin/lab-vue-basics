@@ -1,6 +1,6 @@
 <template>
     <div>
-       {{msg}}
+       {{msag}}
        <button @click="rey">Botón Rey</button>
     </div>
 </template>
@@ -8,8 +8,10 @@
 <script>
 export default {
   name: 'Navbar',
-  props: {
-    msg: String,
+  data() {
+    return {
+      msag: 'Soy el mensaje de Navbar-Rey',
+    };
   },
   methods: {
     rey() {
