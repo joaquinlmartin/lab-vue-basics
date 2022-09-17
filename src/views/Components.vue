@@ -42,6 +42,7 @@ export default {
   },
   methods: {
     colorchange() {
+      this.activeColor = 'red';
       console.log('colorsito cambiado');
     },
   },
