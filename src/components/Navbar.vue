@@ -1,7 +1,7 @@
 <template>
     <div>
-       {{msag}}
-       <button @click="rey">Botón Rey</button>
+       {{message}}
+       <button @click="rey" class="btn">Botón Rey</button>
     </div>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'Navbar',
   data() {
     return {
-      msag: 'Soy el mensaje de Navbar-Rey',
+      message: 'Soy el mensaje de Navbar-Rey',
     };
   },
   methods: {

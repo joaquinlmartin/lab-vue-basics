@@ -16,18 +16,6 @@
   color: #2c3e50;
 }
 
-.component {
-  color: purple;
-}
-
-.hostia {
-  background-color: blue;
-}
-
-.joder {
-  background-color: red;
-}
-
 nav {
   padding: 30px;
 }

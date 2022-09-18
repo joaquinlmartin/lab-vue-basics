@@ -1,7 +1,7 @@
 <template>
     <footer>
-      {{msg}}
-      <button @click="reina">Botón Reina</button>
+      {{ message }}
+      <button @click="reina" class="btn">Botón Reina</button>
     </footer>
 </template>
 
@@ -10,7 +10,7 @@ export default {
   name: 'Footer',
   data() {
     return {
-      msg: 'Soy el mensaje sexy de Footer-Reina',
+      message: 'Soy el mensaje sexy de Footer-Reina',
     };
   },
   methods: {
