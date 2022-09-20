@@ -1,7 +1,7 @@
 <template>
      <div class="component">
       <h1>This is the {{ adjetive }} Components page</h1>
-      <p>{{2 + 2}}</p>
+      <p v-if="mySuperArray.length > 0 && mySuperArray.length === 5">{{2 + 2}}</p>
       <p>{{5 * 10}}</p>
       <button v-bind:class="clicked ? 'joderred' : 'hostiablue'"
        v-on:click ="clicked = !clicked" class="btn">Botón v-bind</button>
@@ -9,7 +9,8 @@
        class="btn">Botón Color</button>
      <Navbar/>
      <Footer></Footer>
-    {{message}}
+    <h3 v-if="showMessage">{{message}}</h3>
+    <h3 v-else>{{messageAlternative}}</h3>
     </div>
 </template>
 
@@ -21,11 +22,14 @@ export default {
   name: 'Components',
   data() {
     return {
-      message: 'Hola soy la hostia y lo sabes',
+      message: 'Soy la hostia y lo sabes',
       property: 'Blank',
       clicked: false,
       activeColor: 'blue',
       adjetive: 'super',
+      showMessage: false,
+      messageAlternative: 'Yipi ka yei, hijo de puta',
+      mySuperArray: [1, 2, 3, 4, 5],
     };
   },
   components: {
