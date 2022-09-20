@@ -11,6 +11,7 @@
      <Footer></Footer>
     <h3 v-if="showMessage">{{message}}</h3>
     <h3 v-else>{{messageAlternative}}</h3>
+    <button @click="returnString" class="btn">Return</button>
     </div>
 </template>
 
@@ -41,6 +42,9 @@ export default {
       this.activeColor = 'red';
       console.log('colorsito cambiado');
     },
+    returnString() {
+      return 'string' && console.log('string de la buena');
+    },
   },
   computed: {
     propertyComputed() {
@@ -53,8 +57,7 @@ export default {
     console.log('propertyComputed will update, as this.property is now reactive.');
   },
   mounted() {
-    this.property = 'Example property update.';
-    console.log(this.$el.textContent); // I'm calculating elements inside the component.
+    console.log(this.$el.textContent); // Está reflejando en consola el texto de la de la vista.
   },
 };
 </script>
