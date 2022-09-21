@@ -1,7 +1,7 @@
 <template>
      <div class="component">
       <h1>This is the {{ adjetive }} Components page</h1>
-      <p v-if="mySuperArray.length > 0 && mySuperArray.length === 5">{{2 + 2}}</p>
+      <p v-show="mySuperArray.length > 0 && mySuperArray.length === 5">{{2 + 2}}</p>
       <p>{{5 * 10}}</p>
       <button v-bind:class="clicked ? 'joderred' : 'hostiablue'"
        v-on:click ="clicked = !clicked" class="btn">Botón v-bind</button>
