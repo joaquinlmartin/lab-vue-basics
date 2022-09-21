@@ -9,9 +9,22 @@
        class="btn">Botón Color</button>
      <Navbar/>
      <Footer></Footer>
+  <ul>
+    <li v-for="elem in myArrayGay" :key="elem.id">{{ elem.subtitle }}</li>
+  </ul>
     <h3 v-if="showMessage">{{message}}</h3>
     <h3 v-else>{{messageAlternative}}</h3>
-    <button @click="returnString" class="btn">Return</button>
+    <button :disabled="showMessage" v-on:click="returnString" class="btn">Return</button>
+    <div>
+    <br>
+    <a href="https://www.google.es" class="a1">Ir a Goggle Forma 1</a>
+    <br>
+    <a v-bind:href="webToGo" class="a2">Ir a Goggle Forma 2</a>
+    <br>
+    <a :href="webToGo" class="a3">Ir a Goggle Forma 3</a>
+    </div>
+    <a :class="showMessage ? 'default' : 'new'"
+    :href="webToGo">Ir a Goggle con Condicional</a>
     </div>
 </template>
 
@@ -30,12 +43,30 @@ export default {
       adjetive: 'super',
       showMessage: false,
       messageAlternative: 'Yipi ka yei, hijo de puta',
+      webToGo: 'https://www.google.es',
       mySuperArray: [1, 2, 3, 4, 5],
+      myArrayGay: [
+        {
+          id: 1,
+          title: 'Web Developer',
+          subtitle: 'Fullstack soy Dios',
+        },
+        {
+          id: 2,
+          title: 'UX/UI',
+          subtitle: 'Pinta y Colorea',
+        },
+        {
+          id: 3,
+          title: 'Data Analist',
+          subtitle: 'Magnetos en potencia',
+        },
+      ],
     };
   },
   components: {
-    Navbar,
-    Footer,
+    Navbar, // El nombre es de ejemplo
+    Footer, // El nombre es de ejemplo
   },
   methods: {
     colorchange() {
@@ -77,5 +108,28 @@ export default {
 
 .joderred {
   background-color: red;
+}
+
+.a1 {
+  background-color: gold;
+  border-radius: 3rem;
+}
+
+.a2 {
+  background-color: red;
+  border-radius: 3rem;
+}
+
+.a3 {
+  background-color: skyblue;
+  border-radius: 3rem;
+}
+
+.default {
+  background-color:black;
+}
+
+.new {
+  background-color:lightgreen;
 }
 </style>

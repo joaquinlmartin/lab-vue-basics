@@ -1,7 +1,7 @@
 <template>
     <div>
        {{message}}
-       <button @click="rey" class="btn">Botón Rey</button>
+       <button :disabled="variableRey" @click="rey" class="btn">Botón Rey</button>
     </div>
 </template>
 
@@ -11,6 +11,7 @@ export default {
   data() {
     return {
       message: 'Soy el mensaje de Navbar-Rey',
+      variableRey: false, // disabled está funcionando al revés, se activa cuando está en true.
     };
   },
   methods: {
