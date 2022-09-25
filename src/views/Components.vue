@@ -9,9 +9,13 @@
        class="btn">Botón Color</button>
      <Navbar/>
      <Footer></Footer>
-  <ul>
-    <li v-for="elem in myArrayGay" :key="elem.id">{{ elem.subtitle }}</li>
-  </ul>
+    <ul>
+    <li v-for="elem in myArrayGay" :key="elem.id" v-show="elem.id === 1">{{ elem.subtitle }}</li>
+    </ul>
+    <div v-for="elem in mySuperArrayGay" :key="elem.id" v-show="elem.id !== 4">
+      <h3>{{ elem.title }}</h3>
+      <h5>{{ elem.subtitle }}</h5>
+    </div>
     <h3 v-if="showMessage">{{message}}</h3>
     <h3 v-else>{{messageAlternative}}</h3>
     <button :disabled="showMessage" v-on:click="returnString" class="btn">Return</button>
@@ -46,6 +50,23 @@ export default {
       webToGo: 'https://www.google.es',
       mySuperArray: [1, 2, 3, 4, 5],
       myArrayGay: [
+        {
+          id: 1,
+          title: 'Web Developer',
+          subtitle: 'Fullstack soy Dios',
+        },
+        {
+          id: 2,
+          title: 'UX/UI',
+          subtitle: 'Pinta y Colorea',
+        },
+        {
+          id: 3,
+          title: 'Data Analist',
+          subtitle: 'Magnetos en potencia',
+        },
+      ],
+      mySuperArrayGay: [
         {
           id: 1,
           title: 'Web Developer',
