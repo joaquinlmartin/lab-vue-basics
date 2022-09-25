@@ -8,9 +8,17 @@
       <button @click="colorchange" v-bind:style="{ color: activeColor }"
        class="btn">Botón Color</button>
      <Navbar/>
-     <Footer></Footer>
+     <Footer>
+      <template v-slot:slotquierechocolate>
+      <p>Esto es un texo introducido por Slot</p>
+      </template>
+      <template v-slot:estimerosmatadores>
+      <p>Somos los estimeros matadores!</p>
+      </template>
+    </Footer>
     <ul>
-    <li v-for="elem in getAvailableGays" :key="elem.id" v-show="elem.id">{{ elem.subtitle }}</li>
+    <li v-for="elem in getAvailableGays"
+     :key="elem.id" v-show="elem.id === 4">{{ elem.subtitle }}</li>
     </ul>
     <div v-for="elem in mySuperArrayGay" :key="elem.id" v-show="elem.id !== 4">
       <h3>{{ elem.title }}</h3>

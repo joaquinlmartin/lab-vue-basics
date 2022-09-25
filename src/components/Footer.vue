@@ -2,6 +2,8 @@
     <footer>
       {{ message }}
       <button @click="reina" class="btn">Botón Reina</button>
+      <slot name="slotquierechocolate"></slot>
+      <slot name="estimerosmatadores">Por ahora no tiene nada</slot>
     </footer>
 </template>
 
