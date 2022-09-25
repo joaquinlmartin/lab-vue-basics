@@ -10,7 +10,7 @@
      <Navbar/>
      <Footer></Footer>
     <ul>
-    <li v-for="elem in myArrayGay" :key="elem.id" v-show="elem.id === 1">{{ elem.subtitle }}</li>
+    <li v-for="elem in getAvailableGays" :key="elem.id" v-show="elem.id">{{ elem.subtitle }}</li>
     </ul>
     <div v-for="elem in mySuperArrayGay" :key="elem.id" v-show="elem.id !== 4">
       <h3>{{ elem.title }}</h3>
@@ -103,6 +103,12 @@ export default {
       console.log('I change when this.property changes.');
       return this.property;
     },
+    getAvailableGays() {
+      return this.myArrayGay.filter((myArrayGay) => myArrayGay.id === 1);
+    },
+  },
+  beforeCreate() {
+    this.myArrayGay = this.getAvailableGays;
   },
   created() {
     this.property = 'Example property update.';
