@@ -16,6 +16,7 @@
       <p>Somos los estimeros matadores!</p>
       </template>
     </Footer>
+    <p>{{ gandalfTheGrey }}</p>
     <ul>
     <li v-for="elem in getAvailableGays"
      :key="elem.id" v-show="elem.id === 4">{{ elem.subtitle }}</li>
@@ -54,6 +55,7 @@ export default {
       activeColor: 'blue',
       adjetive: 'super',
       showMessage: false,
+      interMessage: ', ',
       messageAlternative: 'Yipi ka yei, hijo de puta',
       webToGo: 'https://www.google.es',
       mySuperArray: [1, 2, 3, 4, 5],
@@ -113,6 +115,9 @@ export default {
     },
     getAvailableGays() {
       return this.myArrayGay.filter((myArrayGay) => myArrayGay.id === 1);
+    },
+    gandalfTheGrey() {
+      return `${this.adjetive + this.interMessage + this.message}`;
     },
   },
   beforeCreate() {
